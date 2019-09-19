@@ -1,0 +1,60 @@
+version: '3'
+services:
+   rabbitmq:
+      image: rabbitmq:3-management
+      restart: always
+      container_name: rabbitmq
+      ports:
+         - 15672:15672
+   
+   zipkin:
+      image: openzipkin/zipkin
+      container_name: zipkin
+      ports: 
+         - 9411:9411
+      environment:
+         - RABBIT_URI=amqp://guest:guest@rabbitmq:5672
+         
+   config:
+      container_name: config
+      build:
+         dockerfile: Dockerfile
+         context: ./spring-cloud-config-server      
+      volumes:
+         - /temp   
+   
+   eureka:
+      container_name: eureka
+      build:
+         dockerfile: Dockerfile
+         context: ./netflix-eureka-naming-server
+      ports:
+         - 8761:8761
+   
+   gateway:
+      container_name: gateway
+      build:
+         dockerfile: Dockerfile
+         context: ./netflix-zuul-api-gateway-server
+      ports:
+         - 8765:8765
+   
+   limits:
+      container_name: limits
+      build:
+         dockerfile: Dockerfile
+         context: ./limits-service
+      ports:
+         - 8080:8080
+         
+   exchange:
+      container_name: exchange
+      build:
+         dockerfile: Dockerfile
+         context: ./currency-exchange-service
+   
+   conversion:
+      container_name: conversion
+      build:
+         dockerfile: Dockerfile
+         context: ./currency-conversion-service
