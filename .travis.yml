@@ -41,3 +41,17 @@ after_success:
    - docker build -t $CONVERSION ./currency-conversion-service
    - docker push $CONVERSION
    
+deploy:
+   provider: elasticbeanstalk
+   region: us-east-2
+   app: limits-microservice
+   env: LimitsMicroservice-env
+   bucket_name: limitsmicroservice
+   bucket_path: limits-docker
+   on:
+      branch: master
+   access_key_id:
+      secure: $AWS_ACCESS_KEY 
+   secret_access_key:
+      secure: $AWS_SECRET_KEY
+   
