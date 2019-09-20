@@ -38,6 +38,6 @@ after_success:
    
    # Conversion Service
    - export CONVERSION=continuestudying/limits-conversion
-   - docker build t- $CONVERSION ./currency-conversion-service
+   - docker build -t $CONVERSION ./currency-conversion-service
    - docker push $CONVERSION
    
