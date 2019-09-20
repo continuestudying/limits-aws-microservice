@@ -17,7 +17,7 @@
 			"name": "gateway",
 			"image": "continuestudying/limits-gateway",
 			"hostname": "gateway",
-			"essential": false,
+			"essential": true,
 			"portMappings": [
 				{
 					"hostPort": 8765,
@@ -29,7 +29,7 @@
 			"name": "limits",
 			"image": "continuestudying/limits-limits",
 			"hostname": "limits",
-			"essential": false,
+			"essential": true,
 			"portMappings": [
 				{
 					"hostPort": 8080,
