@@ -44,9 +44,9 @@ after_success:
 deploy:
    provider: elasticbeanstalk
    region: us-east-2
-   app: limits-microservice
-   env: LimitsMicroservice-env
-   bucket_name: limitsmicroservice
+   app: limits-application
+   env: LimitApplication-env
+   bucket_name: elasticbeanstalk-us-east-2-572689041991
    bucket_path: limits-docker
    on:
       branch: master
