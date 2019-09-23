@@ -11,6 +11,11 @@ public class LimitConfigurationController {
 	
 	@Autowired
 	private Configuration configuration;
+	
+	@RequestMapping("/test")
+	public String test() {
+		return "Test deploying on aws";
+	}
 
 	@RequestMapping("/limits")
 	@HystrixCommand(fallbackMethod = "fallbackGetLimits")
