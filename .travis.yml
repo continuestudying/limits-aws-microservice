@@ -44,7 +44,7 @@ after_success:
 deploy:
    provider: elasticbeanstalk
    region: us-east-2
-   app: limits-application
+   app: limit-application
    env: LimitApplication-env
    bucket_name: elasticbeanstalk-us-east-2-572689041991
    bucket_path: limits-docker
