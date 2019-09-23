@@ -12,9 +12,9 @@ after_success:
    
    # Build Image & Push to Docker Hub
    # Config Server
-   - export CONFIG=continuestudying/limits-config
-   - docker build -t $CONFIG ./spring-cloud-config-server
-   - docker push $CONFIG
+   #- export CONFIG=continuestudying/limits-config
+   #- docker build -t $CONFIG ./spring-cloud-config-server
+   #- docker push $CONFIG
    
    # Eureka Naming Server  
    #- export EUREKA=continuestudying/limits-eureka

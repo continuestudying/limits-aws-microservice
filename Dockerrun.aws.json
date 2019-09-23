@@ -1,13 +1,6 @@
 {
 	"AWSEBDockerrunVersion": 2,
-	"containerDefinitions": [
-		{
-			"name": "config",
-			"image": "continuestudying/limits-config",
-			"hostname": "config",
-			"essential": false,
-			"memory": 128
-		},		
+	"containerDefinitions": [		
 		{
 			"name": "limits",
 			"image": "continuestudying/limits-limits",

@@ -2,10 +2,10 @@ package com.nlgroup.limitsservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+//import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @SpringBootApplication
-@EnableHystrix
+//@EnableHystrix
 public class LimitsServiceApplication {
 
 	public static void main(String[] args) {
