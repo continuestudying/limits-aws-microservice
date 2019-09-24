@@ -6,7 +6,13 @@
 			"image": "continuestudying/limits-eureka",
 			"hostname": "eureka",
 			"essential": false,
-			"memory": 128
+			"memory": 128,
+			"portMappings": [
+				{
+					"hostPort": 8761,
+					"containerPort": 8761
+				}
+			]
 		},		
 		{
 			"name": "limits",
