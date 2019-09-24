@@ -1,6 +1,33 @@
 {
 	"AWSEBDockerrunVersion": 2,
-	"containerDefinitions": [		
+	"containerDefinitions": [
+		{
+			"name": "config",
+			"image": "continuestudying/limits-config",
+			"hostname": "config",
+			"essential": false,
+			"memory": 128
+		},
+		{
+			"name": "eureka",
+			"image": "continuestudying/limits-eureka",
+			"hostname": "eureka",
+			"essential": false,
+			"memory": 128
+		},
+		{
+			"name": "gateway",
+			"image": "continuestudying/limits-gateway",
+			"hostname": "gateway",
+			"essential": true,
+			"memory": 128,
+			"portMappings": [
+				{
+					"hostPort": 8765,
+					"containerPort": 8765 
+				}
+			]
+		},
 		{
 			"name": "limits",
 			"image": "continuestudying/limits-limits",
@@ -13,6 +40,20 @@
 					"containerPort": 8080
 				}
 			]
+		},
+		{
+			"name": "exchange",
+			"image": "continuestudying/limits-exchange",
+			"hostname": "exchange",
+			"essential": false,
+			"memory": 128
+		},
+		{
+			"name": "conversion",
+			"image": "continuestudying/limits-conversion",
+			"hostname": "conversion",		
+			"essential": false,
+			"memory": 128
 		}
 	]
 }
