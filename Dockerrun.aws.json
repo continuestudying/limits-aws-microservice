@@ -19,7 +19,7 @@
 			"image": "continuestudying/limits-limits",
 			"hostname": "limits",
 			"essential": true,
-			"memory": 128,
+			"memory": 256,
 			"portMappings": [
 				{
 					"hostPort": 8080,
