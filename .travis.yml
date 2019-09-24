@@ -17,9 +17,9 @@ after_success:
    - docker push $CONFIG
    
    # Eureka Naming Server  
-   - export EUREKA=continuestudying/limits-eureka
-   - docker build -t $EUREKA ./netflix-eureka-naming-server
-   - docker push $EUREKA
+   #- export EUREKA=continuestudying/limits-eureka
+   #- docker build -t $EUREKA ./netflix-eureka-naming-server
+   #- docker push $EUREKA
   
    # Zuul Gateway Server
    #- export GATEWAY=continuestudying/limits-gateway

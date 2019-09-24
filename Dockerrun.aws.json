@@ -2,13 +2,6 @@
 	"AWSEBDockerrunVersion": 2,
 	"containerDefinitions": [
 		{
-			"name": "config",
-			"image": "continuestudying/limits-config",
-			"hostname": "config",
-			"essential": false,
-			"memory": 128
-		},
-		{
 			"name": "eureka",
 			"image": "continuestudying/limits-eureka",
 			"hostname": "eureka",
