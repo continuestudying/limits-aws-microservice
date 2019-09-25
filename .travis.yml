@@ -44,10 +44,10 @@ after_success:
 deploy:
    provider: elasticbeanstalk
    region: us-east-2
-   app: limits-micro-service
-   env: LimitsMicroService-env
+   app: currency-application
+   env: CurrencyApplication-env
    bucket_name: elasticbeanstalk-us-east-2-572689041991
-   bucket_path: limits-docker
+   bucket_path: currency-docker
    on:
       branch: master
    access_key_id:
