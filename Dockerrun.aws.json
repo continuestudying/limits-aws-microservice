@@ -6,7 +6,8 @@
 			"image": "continuestudying/limits-config",
 			"hostname": "config",
 			"essential": true,
-			"memory": 256
+			"memory": 256,
+			"links": [ "eureka" ]
 		},
 		{
 			"name": "eureka",
@@ -19,7 +20,7 @@
 					"hostPort": 8761,
 					"containerPort": 8761
 				}
-			]
+			]			
 		},	
 		{
 			"name": "limits",
@@ -32,7 +33,8 @@
 					"hostPort": 8080,
 					"containerPort": 8080
 				}
-			]
+			],
+			"links": [ "eureka", "config" ]
 		}
 	]
 }
