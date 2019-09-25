@@ -6,38 +6,42 @@ services:
 language: java
 jdk: openjdk8
 
+env: 
+   global:
+      - VERSION: 1 
+
 after_success:
    # Login Docker Hub
    - echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
    
    # Build Image & Push to Docker Hub
    # Config Server
-   - export CONFIG=continuestudying/limits-config
+   - export CONFIG=continuestudying/limits-config:$VERSION
    - docker build -t $CONFIG ./spring-cloud-config-server
    - docker push $CONFIG
    
    # Eureka Naming Server  
-   - export EUREKA=continuestudying/limits-eureka
+   - export EUREKA=continuestudying/limits-eureka:$VERSION
    - docker build -t $EUREKA ./netflix-eureka-naming-server
    - docker push $EUREKA
   
    # Zuul Gateway Server
-   - export GATEWAY=continuestudying/limits-gateway
+   - export GATEWAY=continuestudying/limits-gateway:$VERSION
    - docker build -t $GATEWAY ./netflix-zuul-api-gateway-server
    - docker push $GATEWAY   
    
    # Limits Service
-   - export LIMITS=continuestudying/limits-limits
+   - export LIMITS=continuestudying/limits-limits:$VERSION
    - docker build -t $LIMITS ./limits-service
    - docker push $LIMITS
    
    # Exchange Service   
-   - export EXCHANGE=continuestudying/limits-exchange
+   - export EXCHANGE=continuestudying/limits-exchange:$VERSION
    - docker build -t $EXCHANGE ./currency-exchange-service
    - docker push $EXCHANGE
    
    # Conversion Service
-   - export CONVERSION=continuestudying/limits-conversion
+   - export CONVERSION=continuestudying/limits-conversion:$VERSION
    - docker build -t $CONVERSION ./currency-conversion-service
    - docker push $CONVERSION
    
@@ -55,4 +59,3 @@ deploy:
    secret_access_key:
       secure: $AWS_SECRET_KEY
       
-   

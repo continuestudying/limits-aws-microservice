@@ -3,14 +3,14 @@
 	"containerDefinitions": [
 		{
 			"name": "config",
-			"image": "continuestudying/limits-config",
+			"image": "continuestudying/limits-config:1",
 			"hostname": "config",
 			"essential": true,
 			"memory": 256
 		},
 		{
 			"name": "eureka",
-			"image": "continuestudying/limits-eureka",
+			"image": "continuestudying/limits-eureka:1",
 			"hostname": "eureka",
 			"essential": false,
 			"memory": 256,
@@ -23,7 +23,7 @@
 		},
 		{
 			"name": "gateway",
-			"image": "continuestudying/limits-gateway",
+			"image": "continuestudying/limits-gateway:1",
 			"hostname": "gateway",
 			"essential": false,
 			"memory": 256,
@@ -36,7 +36,7 @@
 		},
 		{
 			"name": "limits",
-			"image": "continuestudying/limits-limits",
+			"image": "continuestudying/limits-limits:1",
 			"hostname": "limits",
 			"essential": false,
 			"memory": 256,
@@ -49,14 +49,14 @@
 		},
 		{
 			"name": "exchange",
-			"image": "continuestudying/limits-exchange",
+			"image": "continuestudying/limits-exchange:1",
 			"hostname": "exchange",
 			"essential": false,
 			"memory": 256
 		},
 		{
 			"name": "conversion",
-			"image": "continuestudying/limits-conversion",
+			"image": "continuestudying/limits-conversion:1",
 			"hostname": "conversion",		
 			"essential": false,
 			"memory": 256
