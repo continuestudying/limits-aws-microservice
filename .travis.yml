@@ -12,9 +12,9 @@ after_success:
    
    # Build Image & Push to Docker Hub
    # Config Server
-   #- export CONFIG=continuestudying/limits-config
-   #- docker build -t $CONFIG ./spring-cloud-config-server
-   #- docker push $CONFIG
+   - export CONFIG=continuestudying/limits-config
+   - docker build -t $CONFIG ./spring-cloud-config-server
+   - docker push $CONFIG
    
    # Eureka Naming Server  
    - export EUREKA=continuestudying/limits-eureka
@@ -22,9 +22,9 @@ after_success:
    - docker push $EUREKA
   
    # Zuul Gateway Server
-   #- export GATEWAY=continuestudying/limits-gateway
-   #- docker build -t $GATEWAY ./netflix-zuul-api-gateway-server
-   #- docker push $GATEWAY   
+   - export GATEWAY=continuestudying/limits-gateway
+   - docker build -t $GATEWAY ./netflix-zuul-api-gateway-server
+   - docker push $GATEWAY   
    
    # Limits Service
    - export LIMITS=continuestudying/limits-limits
@@ -32,14 +32,14 @@ after_success:
    - docker push $LIMITS
    
    # Exchange Service   
-   #- export EXCHANGE=continuestudying/limits-exchange
-   #- docker build -t $EXCHANGE ./currency-exchange-service
-   #- docker push $EXCHANGE
+   - export EXCHANGE=continuestudying/limits-exchange
+   - docker build -t $EXCHANGE ./currency-exchange-service
+   - docker push $EXCHANGE
    
    # Conversion Service
-   #- export CONVERSION=continuestudying/limits-conversion
-   #- docker build -t $CONVERSION ./currency-conversion-service
-   #- docker push $CONVERSION
+   - export CONVERSION=continuestudying/limits-conversion
+   - docker build -t $CONVERSION ./currency-conversion-service
+   - docker push $CONVERSION
    
 deploy:
    provider: elasticbeanstalk
